@@ -19,4 +19,14 @@ public class StringUtil {
         }
         return true;                           //return true if we haven't already returned false.
     }
+    /**
+     * 1.2 Write code to reverse a  String.
+     */
+    public static String reverse(String input){
+        String result="";
+        for(int i=input.length()-1;i>=0;i--){
+            result+=String.valueOf(input.charAt(i));
+        }
+        return result;
+    }
 }
