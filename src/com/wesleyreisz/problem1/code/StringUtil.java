@@ -9,14 +9,14 @@ public class StringUtil {
      * space complexity is O(n)
      */
     public static boolean isUnique(String input){
-        boolean[] char_set = new boolean[256]; //assumes ascii
-        for (int i = 0; i < input.length(); i++) {
-           int val = input.charAt(i);
-           if (char_set[val]){
-               return false;
-           }
-           char_set[val] = true;
+        boolean[] charMask = new boolean[256]; //ascii characters have 256 bits
+        for(int i=0; i<input.length();i++){    //loop each char in screen once O(n)
+            int pos = input.charAt(i);         //get the char int val for the char @ the position
+            if(charMask[pos]){                 //check if that value in the boolean area is true
+                return false;                  //if it is return false... this char has been found before.
+            }
+            charMask[pos]=true;                //set the boolean array to true for that position.
         }
-        return true;
+        return true;                           //return true if we haven't already returned false.
     }
 }
