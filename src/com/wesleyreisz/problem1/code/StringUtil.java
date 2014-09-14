@@ -108,4 +108,45 @@ public class StringUtil {
             return false;
         }
     }
+
+    /**
+     * 1.4 Write a method to decide if two strings are anagrams or not.
+     * O(N^3)
+     */
+    public static boolean isAnagram(String first, String second){
+        if(first.length()!=second.length()){
+            return false;
+        }
+        int endOfArrayOffset = 1;
+        char[] firstStringCharacters = first.toCharArray(); ; //O(N), O(1)
+        char[] secondStringCharacters = second.toCharArray(); //O(N)
+
+        //O(N)
+        for(int i = 0; i<firstStringCharacters.length;i++){
+            char firstStringCharacter = firstStringCharacters[i];
+            char secondStringCharacter = secondStringCharacters[(secondStringCharacters.length-i)-endOfArrayOffset];
+            if(firstStringCharacter!=secondStringCharacter){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Write a method to replace all spaces in a string with ‘%20’.
+     */
+    public static String replaceSpaces(String input){
+        int replaceCharacter = " ".charAt(0);
+        StringBuffer result= new StringBuffer();
+
+        for(int i=0;i<input.length();i++){
+            if(input.charAt(i)==replaceCharacter){
+                result.append("%20");
+            }else{
+                result.append(input.charAt(i));
+            }
+        }
+        return result.toString();
+        //return input.replace(" ", "%20");
+    }
 }

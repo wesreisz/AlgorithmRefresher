@@ -20,20 +20,6 @@ public class StringUtilTest {
         Assert.assertEquals("sew", StringUtil.reverse("wes"));
         Assert.assertEquals("12345", StringUtil.reverse("54321"));
     }
-    @Test
-    public void testRemoveDups(){
-        String set1 = "wweess";
-        StringUtil.removeDuplicatesSolution(set1);
-        Assert.assertEquals("wes", set1);
-
-        String set2 = "111222234";
-        StringUtil.removeDuplicatesSolution(set2);
-        Assert.assertEquals("1234", set2);
-
-        String set3 = "42222242221";
-        StringUtil.removeDuplicatesSolution(set3);
-        Assert.assertEquals("4321", set3);
-    }
 
     @Test
     public void testRemoveDupsNew(){
@@ -64,5 +50,22 @@ public class StringUtilTest {
         Assert.assertTrue(StringUtil.charactersAreUnique1("ert"));
         Assert.assertFalse(StringUtil.charactersAreUnique1("tttt"));
         Assert.assertFalse(StringUtil.charactersAreUnique1("test"));
+    }
+
+    @Test
+    public void testForAnagram(){
+        Assert.assertTrue(StringUtil.isAnagram("wes","sew"));
+        Assert.assertTrue(StringUtil.isAnagram("test","tset"));
+        Assert.assertTrue(StringUtil.isAnagram("bib","bib"));
+        Assert.assertFalse(StringUtil.isAnagram("bis","bib"));
+    }
+
+    @Test
+    public void testForSpaceReplacement(){
+        String stringToTest = "test test";
+        Assert.assertEquals(
+            stringToTest.replace(" ","%20"),
+            StringUtil.replaceSpaces(stringToTest)
+        );
     }
 }
