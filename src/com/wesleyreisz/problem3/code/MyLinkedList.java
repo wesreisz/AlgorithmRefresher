@@ -25,13 +25,13 @@ public class MyLinkedList {
         MyLinkedList n = this;
         if (n==null){ return n.value; }
 
-        do{
+        while (n!=null){
             sb.append(n.value);
             if(n.next!=null){
                 sb.append(", ");
             }
             n=n.next;
-        }while (n!=null);
+        }
 
         return sb.toString();
     }
