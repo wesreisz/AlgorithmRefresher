@@ -113,7 +113,7 @@ public class StringUtil {
      * 1.4 Write a method to decide if two strings are anagrams or not.
      * O(N^3)
      */
-    public static boolean isAnagram(String first, String second){
+    public static boolean areTwoWordsAnAnagram(String first, String second){
         if(first.length()!=second.length()){
             return false;
         }
@@ -148,5 +148,21 @@ public class StringUtil {
         }
         return result.toString();
         //return input.replace(" ", "%20");
+    }
+
+    public static boolean isAnagram(String input) {
+        if(input==null){
+            return false;
+        }
+        input = input.toLowerCase();//ignore case
+
+        for(int i=0;i<(input.length()/2)+1;i++){
+            char firstVal = input.charAt(i);
+            char lastVal = input.charAt((input.length()-1)-i);
+            if(firstVal!=lastVal){
+                return false;
+            }
+        }
+        return true;
     }
 }
