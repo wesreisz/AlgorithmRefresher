@@ -51,4 +51,22 @@ public class WordUtils {
         LOG.fine("String: " + input + " > " + result.toString().trim());//added a space so trim it.
         return result.toString().trim();
     }
+
+    public static int binarySum(String first, String second) {
+        int total = 0;
+        String phrase = first + second;
+        String binaryString = "";
+        byte[] bytes = phrase.getBytes();
+        for(byte b:bytes){
+            binaryString+=Integer.toBinaryString(b);
+        }
+        for(int i=0;i<binaryString.length();i++){
+            if(binaryString.charAt(i)=="1".charAt(0)){
+                total+=1;
+            }
+        }
+
+        LOG.fine("String: " + phrase + ", " + binaryString + ". count: " + total);
+        return total;
+    }
 }

@@ -41,4 +41,15 @@ public class TestWordReplace {
                 WordUtils.simpleWordReplace(input, "thomas", "wes")
         );
     }
+    @Test
+    public void binarySum(){
+       /**Code a function that gets two strings representing binary
+         * numbers (so the only possible characters are '1' and '0',
+         * and returns a third string representing the sum of the input.
+         * The input strings don't necessarily have of the same length.
+        */
+        Assert.assertEquals(29, WordUtils.binarySum("wes","kim"));
+        Assert.assertEquals(43, WordUtils.binarySum("echo","cosmo"));
+        Assert.assertEquals(29, WordUtils.binarySum("","cosmo"));
+    }
 }
