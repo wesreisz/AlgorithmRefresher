@@ -1,6 +1,7 @@
 package com.wesleyreisz.problem6.code;
 
 import java.util.HashMap;
+import java.util.StringTokenizer;
 import java.util.logging.Logger;
 
 /**
@@ -68,5 +69,24 @@ public class WordUtils {
 
         LOG.fine("String: " + phrase + ", " + binaryString + ". count: " + total);
         return total;
+    }
+
+    public static String stringMunge(String input) {
+        if(input==null || input.length()<=0){
+            return "";
+        }
+
+        StringBuilder result = new StringBuilder();
+        StringTokenizer st = new StringTokenizer(input);
+        while(st.hasMoreTokens()){
+            StringBuilder drow = new StringBuilder();
+            String word = st.nextToken();
+            for(int i=word.length()-1;i>=0;i--){
+                drow.append(word.charAt(i));
+            }
+            result.append(drow + " ");
+        }
+
+        return result.toString().trim();
     }
 }

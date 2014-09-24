@@ -52,4 +52,15 @@ public class TestWordReplace {
         Assert.assertEquals(43, WordUtils.binarySum("echo","cosmo"));
         Assert.assertEquals(29, WordUtils.binarySum("","cosmo"));
     }
+    @Test
+    public void testStringMunge(){
+        /**
+         * Code a function that receives a string composed by words separated by spaces
+         * and returns a string where words appear in the same order but than the original
+         * string, but every word is inverted.
+         */
+        Assert.assertEquals("", WordUtils.stringMunge(null));
+        Assert.assertEquals("", WordUtils.stringMunge(""));
+        Assert.assertEquals("sew tih eht tops", WordUtils.stringMunge("wes hit the spot"));
+    }
 }
