@@ -1,5 +1,7 @@
 package com.wesleyreisz.problem7.code;
 
+import java.util.Arrays;
+
 /**
  * Created by wesleyreisz on 9/25/14.
  */
@@ -22,5 +24,26 @@ public class Problem7Utils {
         }
 
         return "";
+    }
+
+    public static boolean isAnagram(String first, String second) {
+        if(first==null || second==null){
+            return false;
+        }
+        if(first.length()!=second.length()){
+            return false;
+        }
+        char[] firstCharacters= first.toCharArray();
+        Arrays.sort(firstCharacters);
+        char[] secondCharacters= second.toCharArray();
+        Arrays.sort(secondCharacters);
+
+        for(int i=0;i<firstCharacters.length;i++){
+            if(firstCharacters[i]!=secondCharacters[i]){
+                return false;
+            }
+        }
+        return true;
+
     }
 }

@@ -18,5 +18,11 @@ public class Problem7UtilsTest {
         Assert.assertEquals("w", Problem7Utils.findFirstNonRepeatingChar("aabbccddeewes"));
     }
 
+    @Test
+    public void testIsAnagram(){
+        Assert.assertEquals(false, Problem7Utils.isAnagram(null,null));
+        Assert.assertEquals(false, Problem7Utils.isAnagram("res","sew"));
+        Assert.assertEquals(true, Problem7Utils.isAnagram("wes","sew"));
+    }
 
 }
