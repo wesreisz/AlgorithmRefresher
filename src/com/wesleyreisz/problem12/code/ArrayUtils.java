@@ -40,4 +40,22 @@ public class ArrayUtils {
 
         return arr;
     }
+
+    public static int[] IncrementArray2(int[] arr) {
+        return IncrementArray2(arr, arr.length-1,false);
+    }
+    private static int[] IncrementArray2(int[] arr, int count, boolean carryTheOne) {
+        if (count<0) return arr;
+
+        if(arr[count]==9){
+            arr[count]=0;
+            carryTheOne=true;
+        }else{
+            if(carryTheOne){
+                arr[count]++;
+                carryTheOne=false;
+            }
+        }
+        return IncrementArray2(arr, count-1,carryTheOne);
+    }
 }
