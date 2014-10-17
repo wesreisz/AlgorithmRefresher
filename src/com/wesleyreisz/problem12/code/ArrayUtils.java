@@ -58,4 +58,21 @@ public class ArrayUtils {
         }
         return IncrementArray2(arr, count-1,carryTheOne);
     }
+
+    public static int[] IncrementArray3(int[] ints) {
+        return incrementArray3(ints,ints.length-1,false);
+    }
+
+    private static int[] incrementArray3(int[] ints, int count, boolean carryTheOne){
+        if(count<0)return ints;
+        if(ints[count]==9){
+            ints[count]=0;
+            carryTheOne=true;
+        }else{
+            if(carryTheOne)
+                ints[count]++;
+        }
+
+        return incrementArray3(ints,count-1,carryTheOne);
+    }
 }

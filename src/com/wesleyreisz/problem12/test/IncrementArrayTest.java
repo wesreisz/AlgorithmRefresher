@@ -39,4 +39,13 @@ public class IncrementArrayTest {
         Assert.assertEquals(2,results[1]);
         Assert.assertEquals(0,results[2]);
     }
+
+    @Test
+    public void testIncrementArray3() {
+        int[] results = ArrayUtils.IncrementArray3(new int[]{2, 9, 9});
+        Assert.assertEquals(3, results[0]);
+        Assert.assertEquals(0, results[1]);
+        Assert.assertEquals(0, results[2]);
+    }
 }
+
